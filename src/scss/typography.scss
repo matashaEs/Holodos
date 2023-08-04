@@ -1,0 +1,112 @@
+h1,
+.h1 {
+    font-family: var(--font-dancing-script);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.6rem;
+    line-height: 65px;
+}
+
+h2,
+.h2 {
+    font-family: var(--font-poppins);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 45px;
+}
+
+h3,
+.h3 {
+    font-family: var(--font-poppins);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 33px;
+}
+
+p,
+.p {
+    font-family: var(--font-poppins);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 24px;
+}
+
+button,
+.button {
+    width: fit-content;
+    padding: 0.5rem 2.5rem;
+    background: var(--orange);
+    border: none;
+    border-radius: 10rem;
+    cursor: pointer;
+    color: var(--off-white);
+    transition: all 0.5s ease;
+
+    &:hover {
+        scale: 1.1;
+    }
+
+    &-arrow {
+        display: flex;
+        position: relative;
+
+        &::after {
+            content: url('./../assets/img/arrow-right.svg');
+            position: absolute;
+            right: -2.5rem;
+            transition: all 0.3s ease;
+            bottom: -0.7rem;
+        }
+
+        &:hover {
+            &::after {
+                right: -5rem;
+            }
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+.button--green {
+    background: none;
+    border: none;
+    width: fit-content;
+    color: var(--green);
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        scale: 1;
+        text-decoration: underline;
+    }
+}
+
+@include min-size(lg) {
+
+    h1,
+    .h1 {
+        font-size: 5.4rem;
+    }
+
+    h2,
+    .h2 {
+        font-size: 3rem;
+    }
+
+    h3,
+    .h3 {
+        font-size: 2.2rem;
+    }
+
+    p,
+    .p {
+        font-size: 1.6rem;
+    }
+}

@@ -1,0 +1,134 @@
+@import './../../scss/mixins.scss';
+
+.login {
+    .container {
+        flex-direction: row;
+    }
+
+    &__logo{
+        margin-top: 2.5rem;
+        text-align: left;
+    }
+
+    &__left {
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__right {
+        display: none;
+    }
+
+    &__form {
+        width: 100%;
+        max-width: 36rem;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    &__title-form {
+        margin: auto;
+        width: 100%;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+
+    }
+
+    &__new {
+        display: flex;
+        align-self: center;
+        margin-bottom: 4.5rem;
+    }
+
+    &__button {
+        margin: auto;
+        margin-top: 4rem;
+
+        &--green {
+            margin-left: auto;
+        }
+    }
+
+    &__input {
+        background: none;
+        border: none;
+        height: 5rem;
+        border-bottom: solid 2px var(--dark-blue);
+
+        &::placeholder {
+            transition: all 0.5s;
+        }
+
+        &:focus {
+            &::placeholder {
+                transform: translateY(-18px);
+                font-size: 1.6rem;
+            }
+
+            border-bottom: solid 2px var(--orange);
+        }
+
+        &--red {
+            border-bottom: solid 2px var(--red);
+        }
+    }
+
+    &__error {
+        height: 2rem;
+        margin-bottom: 1rem;
+        text-align: left;
+        color: var(--red);
+    }
+
+    &__right {
+        width: 100%;
+    }
+}
+
+@include min-size(md) {
+    .login {
+        height: 100vh;
+
+        &__left {
+            width: 50%;
+        }
+
+        &__right {
+            width: 50%;
+        }
+    }
+}
+
+@include min-size(lg) {
+    .login {
+        &__right {
+            width: 55%;
+            margin-right: -10rem;
+            display: block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    }
+}
+
+@include min-size(xl) {
+    .login {
+        &__right {
+            width: 59%;
+            margin-right: -14rem;
+            display: block;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+    }
+}

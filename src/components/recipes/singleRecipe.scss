@@ -1,0 +1,327 @@
+@import './../../scss/mixins.scss';
+
+.singleRecipe {
+    &__title {
+        text-align: center;
+        width: 100%;
+    }
+
+    &__image-container {
+        width: 100%;
+        height: 30rem;
+    }
+
+    &__bonapetit {
+        text-align: center;
+        width: 100%;
+        padding-top: 5.5rem;
+    }
+
+    &__header {
+        width: 100%;
+        margin-top: 1.5rem;
+
+        &--right {
+            width: 100%;
+            margin-top: 2rem;
+        }
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__steps {
+        margin-top: 2rem;
+
+        &-image-container {
+            width: 100%;
+            height: 30rem;
+        }
+
+        &-description {
+            padding-top: 2rem;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 3px;
+                background: var(--orange);
+                width: 100vw;
+                bottom: -1rem;
+                right: -58%;
+            }
+        }
+    }
+
+    &__filter {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--orange);
+        padding-bottom: 1.5rem;
+
+        &-item {
+            text-align: center;
+        }
+    }
+
+    &__step {
+        position: relative;
+        margin-top: 7rem;
+    }
+
+    &__comment {
+        padding-bottom: 3rem;
+
+        &-date {
+            color: var(--green);
+        }
+    }
+
+    &__comments {
+        width: 100%;
+        margin-top: 9rem;
+        margin-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+
+        .button {
+            align-self: end;
+            margin-top: 1rem;
+        }
+
+        &-title {
+            width: fit-content;
+            border-bottom: 3px solid var(--orange);
+        }
+
+        &-textarea {
+            width: 100%;
+            background: none;
+            border: 3px solid var(--green);
+            margin-top: 3rem;
+            height: 10rem;
+            resize: none;
+            padding-top: 1rem;
+            font-family: var(--font-poppins);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 1.4rem;
+
+            &::placeholder {
+                font-family: var(--font-poppins);
+                font-style: normal;
+                font-weight: 400;
+                font-size: 1.5rem;
+                transition: all 0.5s;
+                transform: translateY(-5px);
+            }
+
+            &:focus {
+                &::placeholder {
+                    transform: translateY(-14px);
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    &__description {
+        width: 100%;
+        border-bottom: 1px solid var(--orange);
+        padding-bottom: 1.5rem;
+        padding-top: 2.5rem;
+        position: relative;
+    }
+
+    &__count {
+        position: absolute;
+        color: var(--white);
+        font-style: normal;
+        font-weight: 400;
+        text-align: end;
+        background: var(--orange);
+        width: 100vw;
+        font-size: 32px;
+        line-height: 50px;
+        left: calc(-100vw + 6rem);
+        padding-right: 3rem;
+        top: -5rem;
+    }
+
+    &__ingradients {
+        width: 100%;
+        padding-top: 2rem;
+        border-bottom: 1px solid var(--orange);
+        padding-bottom: 1.5rem;
+
+        &-item {
+            width: 24%;
+            text-align: center;
+
+            img {
+                height: 50px;
+              }
+        }
+
+        &-ingradients {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            padding-top: 0.5rem;
+        }
+    }
+}
+
+@include min-size(md) {
+    .singleRecipe {
+        &__container {
+            padding-top: 85px;
+        }
+
+        &__image-container {
+            height: 56rem;
+        }
+
+        &__count {
+            font-size: 54px;
+            line-height: 81px;
+            left: calc(-100vw + 11rem);
+            padding-right: 6rem;
+            top: 4.5rem;
+        }
+
+        &__steps {
+            width: 100%;
+
+            &-image-container {
+                min-height: 493px;
+                width: 62.5%;
+                height: auto;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 13px;
+                    width: 100vw;
+                    background: var(--orange);
+                    right: -100vw;
+                    bottom: 0;
+                }
+            }
+
+            &-title {
+                width: 100%;
+            }
+
+            &-description {
+                width: 37%;
+                margin: auto;
+                padding: 2rem 0 2rem 2rem;
+                position: relative;
+
+                &::before {
+                    content: none;
+                }
+            }
+        }
+
+        &__step {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 11rem;
+            margin-top: 5rem;
+            position: relative;
+        }
+    }
+}
+
+@include min-size(lg) {
+    .singleRecipe {
+        &__image-container {
+            width: 52%;
+            height: auto;
+        }
+
+        &__step {
+            margin-top: 11rem;
+        }
+
+        &__comments {
+            width: 100%;
+            margin-top: 9rem;
+            margin-left: 11rem;
+            width: 57%;
+            display: flex;
+            flex-direction: column;
+
+            .button {
+                align-self: end;
+                margin-top: 1rem;
+            }
+
+            &-title {
+                width: 27%;
+                border-bottom: 3px solid var(--orange);
+            }
+
+            &-textarea {
+                width: 100%;
+                background: none;
+                border: 3px solid var(--green);
+                margin-top: 3rem;
+                height: 10rem;
+                resize: none;
+                padding-top: 1rem;
+
+                &::placeholder {
+                    font-family: var(--font-poppins);
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 1.5rem;
+                    transition: all 0.5s;
+                    transform: translateY(-5px);
+                    // line-height: 24px;
+                }
+
+                &:focus {
+                    &::placeholder {
+                        transform: translateY(-14px);
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        }
+
+        &__header {
+            display: flex;
+            gap: 2rem;
+
+            &--right {
+                width: 48%;
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+@include min-size(xl) {
+    .singleRecipe {
+        &__image-container {
+            width: 66%;
+        }
+
+        &__header {
+            &--right {
+                width: 33%;
+            }
+        }
+    }
+}

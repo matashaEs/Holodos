@@ -1,0 +1,179 @@
+* {
+  outline: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 10px;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100vw;
+  margin: 0;
+  font-size: 2rem;
+  background-color: var(--off-white);
+  color: var(--dark-blue);
+}
+
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100vw;
+  max-width: 1440px;
+  padding: 0 2rem;
+  margin: auto;
+}
+
+.row {
+  display: flex;
+}
+
+.footer {
+  width: 100%;
+  background: var(--orange);
+  text-align: center;
+  height: 80px;
+  display: flex;
+  align-items: center;
+
+  &__text {
+    color: var(--off-white);
+    margin: auto;
+  }
+}
+
+.header {
+  top: 0;
+  z-index: 1000;
+  background: var(--off-white);
+  width: 100%;
+  position: fixed;
+
+  &__desktop {
+    display: none;
+
+    &-logout {
+      padding-left: 3.5rem;
+    }
+
+    &-container {
+      flex-direction: row;
+      padding: 0 9rem !important;
+      width: 100%;
+      height: 8rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-logo {
+      height: 60px;
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+
+    &-link {
+      color: var(--dark-blue);
+      padding-left: 3rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__mobile {
+    &-menu {
+      background: none;
+      padding: 0;
+    }
+
+    &-link {
+      color: var(--dark-blue);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-width {
+      width: 25px;
+    }
+
+    &-main {
+      padding: 1rem 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-extended {
+      padding-bottom: 2rem;
+
+      &--false {
+        display: none;
+      }
+
+      &--true {
+        display: block;
+      }
+    }
+  }
+}
+
+@include min-size(md) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@include min-size(lg) {
+  .container {
+    padding: 0 5rem;
+  }
+
+  .header {
+    &__mobile {
+      display: none;
+    }
+
+    &__desktop {
+      display: flex;
+    }
+  }
+}
+
+@include min-size(xl) {
+  .header {
+    &__desktop {
+      &-link {
+        padding-left: 5rem;
+      }
+    }
+  }
+
+  .container {
+    padding: 0 7rem;
+  }
+}

@@ -1,0 +1,30 @@
+@use "sass:math";
+
+@mixin min-size($size) {
+  @if $size == md {
+    @media (min-width: 768px) {
+      @content;
+    }
+  } @else if $size == lg {
+    @media (min-width: 1024px) {
+      @content;
+    }
+  } @else if $size == xl {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  } @else if $size == xxl {
+    @media (min-width: 1920px) {
+      @content;
+    }
+  }
+}
+
+@mixin z-index-children($z-index-start, $how-many) {
+  @for $i from 1 through $how-many {
+
+    &:nth-child(#{$i}) {
+      z-index: $z-index-start - $i + 1;
+    }
+  }
+}
